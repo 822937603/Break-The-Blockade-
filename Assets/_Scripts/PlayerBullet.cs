@@ -5,9 +5,14 @@ public class PlayerBullet : MonoBehaviour {
 
 	float speed;
 
+	//private AudioSource[] _audioSources;
+	//private AudioSource _missileExplodeAudioSource, _itemCollectAudioSource;
 	// Use this for initialization
 	void Start () {
 		speed = 8f;
+		//this._audioSources = this.GetComponents<AudioSource> ();
+		//this._missileExplodeAudioSource = this._audioSources [1];
+		//this._itemCollectAudioSource = this._audioSources [2];
 	}
 	
 	// Update is called once per frame
@@ -35,10 +40,12 @@ public class PlayerBullet : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D otherGameObject) {
 		if (otherGameObject.tag == "EnemyMissile") {
+			//this._missileExplodeAudioSource.Play();
 			Destroy (gameObject);
 		}
 
 		if (otherGameObject.tag == "Item") {
+			//this._itemCollectAudioSource.Play();
 			Destroy (gameObject);
 		}
 		//this._islandAudioSource.Play (); // play yay sound

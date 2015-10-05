@@ -11,6 +11,8 @@ public class PlayerCollider : MonoBehaviour {
 	public int  scoreValue = 0;
 	public int  livesValue = 5;
 
+
+
 	// Use this for initialization
 	void Start () {
 		this._SetScore ();

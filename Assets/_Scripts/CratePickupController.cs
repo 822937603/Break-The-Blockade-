@@ -18,6 +18,8 @@ public class CratePickupController : MonoBehaviour {
 	public float speed;
 	public Area boundary;
 
+	AudioSource itemSound;
+
 	// PRIVATE INSTANCE VARIABLES
 	private float _CurrentSpeed;
 	private float _CurrentDrift;
@@ -25,6 +27,7 @@ public class CratePickupController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this._Reset ();
+		itemSound = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -47,11 +50,17 @@ public class CratePickupController : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D otherGameObject) {
 		if (otherGameObject.tag == "Missile") {
-			Destroy (gameObject);
+			//AudioSource.PlayClipAtPoint(itemSound, transform.position);
+			//itemSound.Play();
+			Destroy (this.gameObject);
+			//this._Reset();
 			
 		}
 		if (otherGameObject.tag == "Player") {
-			Destroy (gameObject);
+			//AudioSource.PlayClipAtPoint(itemSound, transform.position);
+			itemSound.Play();
+			//Destroy (this.gameObject);
+			this._Reset();
 		}
 	}
 	}

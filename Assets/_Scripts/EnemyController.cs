@@ -21,6 +21,8 @@ public class EnemyController : MonoBehaviour {
 	public Speed speed;
 	public Drift drift;
 	public Boundary boundary;
+
+	AudioSource enemySound;
 	
 	// PRIVATE INSTANCE VARIABLES
 	private float _CurrentSpeed;
@@ -29,6 +31,7 @@ public class EnemyController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this._Reset ();
+		enemySound = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -54,11 +57,15 @@ public class EnemyController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D otherGameObject) {
 		if (otherGameObject.tag == "Missile") {
-			Destroy (gameObject);
+			enemySound.Play();
+			this._Reset();
+			//Destroy (gameObject);
 
 		}
 		if (otherGameObject.tag == "Player") {
-			Destroy (gameObject);
+			enemySound.Play();
+			this._Reset();
+			//Destroy (gameObject);
 	}
 	}
 }
