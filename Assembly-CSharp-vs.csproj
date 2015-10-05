@@ -51,6 +51,7 @@
      <Compile Include="Assets\_Scripts\EnemyController.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
      <Compile Include="Assets\_Scripts\PlayerBullet.cs" />
+     <Compile Include="Assets\_Scripts\PlayerCollider.cs" />
      <Compile Include="Assets\_Scripts\PlayerController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

@@ -62,9 +62,9 @@ public class PlayerController : MonoBehaviour {
 		transform.position = pos;
 	}
 
-		void OnTriggerEnter2D(Collider2D otherGameObject) {
-		if (otherGameObject.tag == "EnemyMissile") {
-			Destroy (gameObject);
-		}
-	}
+		//void OnTriggerEnter2D(Collider2D otherGameObject) {
+		//if (otherGameObject.tag == "EnemyMissile" ) {
+		//	Destroy (gameObject);
+		//}
+	//}
 }
