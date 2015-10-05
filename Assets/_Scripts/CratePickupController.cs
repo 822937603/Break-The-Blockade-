@@ -49,13 +49,13 @@ public class CratePickupController : MonoBehaviour {
 		gameObject.GetComponent<Transform> ().position = resetPosition;
 	}
 	void OnTriggerEnter2D(Collider2D otherGameObject) {
-		if (otherGameObject.tag == "Missile") {
+		//if (otherGameObject.tag == "Missile") {
 			//AudioSource.PlayClipAtPoint(itemSound, transform.position);
 			//itemSound.Play();
-			Destroy (this.gameObject);
+			//Destroy (this.gameObject);
 			//this._Reset();
 			
-		}
+		//}
 		if (otherGameObject.tag == "Player") {
 			//AudioSource.PlayClipAtPoint(itemSound, transform.position);
 			itemSound.Play();

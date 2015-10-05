@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour {
 		speed = 5f;
 		this._Missiles ();
 		//this._Item ();
-		InvokeRepeating ("_Missiles", 0f, 3f);
+		InvokeRepeating ("_Missiles", 0f, 7f);
 		InvokeRepeating ("_Item", 0f, 20f);
 	}
 	

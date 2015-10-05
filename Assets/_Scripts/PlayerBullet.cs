@@ -1,9 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerBullet : MonoBehaviour {
 
 	float speed;
+
+	public Text scoreLabel;
+	public int  scoreValue;
 
 	//private AudioSource[] _audioSources;
 	//private AudioSource _missileExplodeAudioSource, _itemCollectAudioSource;
@@ -46,8 +50,13 @@ public class PlayerBullet : MonoBehaviour {
 
 		if (otherGameObject.tag == "Item") {
 			//this._itemCollectAudioSource.Play();
+			this.scoreValue -= 1000;
 			Destroy (gameObject);
 		}
+	}
+
+		private void _SetScore() {
+		this.scoreLabel.text = "Score: " + -(this.scoreValue);
 		//this._islandAudioSource.Play (); // play yay sound
 	}	//this.scoreValue += 100; // add 100 points
 }
