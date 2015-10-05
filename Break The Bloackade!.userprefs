@@ -1,14 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\PlayerBullet.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\PlayerController.cs">
     <Files>
-      <File FileName="Assets\_Scripts\EnemyController.cs" Line="33" Column="18" />
-      <File FileName="Assets\_Scripts\PlayerBullet.cs" Line="20" Column="3" />
-      <File FileName="Assets\_Scripts\PlayerCollider.cs" Line="52" Column="23" />
-      <File FileName="Assets\_Scripts\GameController.cs" Line="30" Column="26" />
-      <File FileName="Assets\_Scripts\PlayerController.cs" Line="54" Column="27" />
+      <File FileName="Assets\_Scripts\PlayerBullet.cs" Line="41" Column="4" />
+      <File FileName="Assets\_Scripts\EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\PlayerCollider.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\GameController.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\PlayerController.cs" Line="32" Column="14" />
       <File FileName="Assets\_Scripts\BackgroundController.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Scripts\CratePickupController.cs" Line="54" Column="23" />
+      <File FileName="Assets\_Scripts\CratePickupController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

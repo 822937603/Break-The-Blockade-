@@ -5,25 +5,31 @@ public class PlayerController : MonoBehaviour {
 
 	//PUBLIC INSTANCE VARIABLES
 	public float speed;
+	public int delay;
 
 	//GAMEOBJECTS
 	public GameObject PlayerBullet; //the prefab
 	public GameObject BulletPosition;
 
+
 	// Use this for initialization
 	void Start () {
-	
+
+
 	}
-	
 	// Update is called once per frame
 	void Update () {
 
 		//fire @ spacebar 
-		if (Input.GetKeyDown ("space")) {
+		if (Input.GetKeyDown ("space")&&(delay<3)) {
 			//instantiate bullet
 			GameObject bullet = (GameObject)Instantiate (PlayerBullet);
-			bullet.transform.position = BulletPosition.transform.position; //iniital position
+			bullet.transform.position = BulletPosition.transform.position;//iniital position
+			delay++;
 
+		}
+		if (Input.GetKeyDown (KeyCode.R)) {
+			delay = 0;
 		}
 
 		float x = Input.GetAxisRaw ("Horizontal"); // -1, 0, 1 for left, no input, right
@@ -61,6 +67,7 @@ public class PlayerController : MonoBehaviour {
 		//update position
 		transform.position = pos;
 	}
+
 
 		//void OnTriggerEnter2D(Collider2D otherGameObject) {
 		//if (otherGameObject.tag == "EnemyMissile" ) {
