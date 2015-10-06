@@ -1,8 +1,14 @@
-﻿using UnityEngine;
+﻿/// Jonathan Lee
+/// File: GameController.cs
+/// Last Updated: October 5th, 2015
+/// Instantiates the missiles and items
+
+using UnityEngine;
 using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+	// PUBLIC INSTANCE VARIABLES
 	public int missileCount;
 	public GameObject missile;
 	public float speed;
@@ -25,6 +31,7 @@ public class GameController : MonoBehaviour {
 
 	}
 
+	//instantiates # of missiles
 	public void _Missiles() {
 		for (int count=0; count < this.missileCount; count++) {
 			Instantiate (missile);
@@ -32,6 +39,7 @@ public class GameController : MonoBehaviour {
 		//Spawner ();
 	}
 
+	//instantiates item crates
 	public void _Item()
 	{
 		for (int countItem=0; countItem < this.itemCount; countItem++) {
@@ -39,6 +47,7 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
+	//was experimenting pretty sure this is not used
 	void Spawner()
 	{
 		float spawnSeconds;

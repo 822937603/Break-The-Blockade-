@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/// Jonathan Lee
+/// File: CratePickuoController.cs
+/// Last Updated: October 5th, 2015
+/// Controls the item pickup, movement and collider function
+
+using UnityEngine;
 using System.Collections;
 
 [System.Serializable]
@@ -12,7 +17,7 @@ public class SpeedItem {
 }
 public class CratePickupController : MonoBehaviour {
 
-
+	// PUBLIC INSTANCE VARIABLES
 	public SpeedItem Speedy;
 	public Drift drift;
 	public float speed;
@@ -41,21 +46,18 @@ public class CratePickupController : MonoBehaviour {
 			this._Reset();
 		}
 	}
-	
+
+	// resets crate position
 	private void _Reset() {
 		this._CurrentDrift = Random.Range (drift.minDrift, drift.maxDrift);
 		this._CurrentSpeed = Random.Range (Speedy.minSpeedy, Speedy.maxSpeedy);
 		Vector2 resetPosition = new Vector2 (boundary.xMax, Random.Range(boundary.yMin, boundary.yMax));
 		gameObject.GetComponent<Transform> ().position = resetPosition;
 	}
+
+	//Collision code for sound and reset
 	void OnTriggerEnter2D(Collider2D otherGameObject) {
-		//if (otherGameObject.tag == "Missile") {
-			//AudioSource.PlayClipAtPoint(itemSound, transform.position);
-			//itemSound.Play();
-			//Destroy (this.gameObject);
-			//this._Reset();
-			
-		//}
+
 		if (otherGameObject.tag == "Player") {
 			//AudioSource.PlayClipAtPoint(itemSound, transform.position);
 			itemSound.Play();

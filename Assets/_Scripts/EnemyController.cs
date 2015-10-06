@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/// Jonathan Lee
+/// File: EnemyController.cs
+/// Last Updated: October 5th, 2015
+/// Controls the enemy missile, bondary, reset, and collider events
+
+using UnityEngine;
 using System.Collections;
 
 [System.Serializable]
@@ -17,7 +22,8 @@ public class Boundary {
 }
 
 public class EnemyController : MonoBehaviour {
-	//float speed;
+
+	// PUBLIC INSTANCE VARIABLES
 	public Speed speed;
 	public Drift drift;
 	public Boundary boundary;
@@ -47,7 +53,7 @@ public class EnemyController : MonoBehaviour {
 		}
 	}
 	
-	// resets the gameObject
+	// resets the Enemy
 	private void _Reset() {
 		this._CurrentDrift = Random.Range (drift.minDrift, drift.maxDrift);
 		this._CurrentSpeed = Random.Range (speed.minSpeed, speed.maxSpeed);
@@ -55,6 +61,7 @@ public class EnemyController : MonoBehaviour {
 		gameObject.GetComponent<Transform> ().position = resetPosition;
 }
 
+	//Collision Code for sound and reset
 	void OnTriggerEnter2D(Collider2D otherGameObject) {
 		if (otherGameObject.tag == "Missile") {
 			enemySound.Play();

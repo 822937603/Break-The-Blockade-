@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/// Jonathan Lee
+/// File: BackgroundController.cs
+/// Last Updated: October 5th, 2015
+/// Controls the Player Boundaries and the firing
+
+using UnityEngine;
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
@@ -28,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 			delay++;
 
 		}
+		//Code for the reload
 		if (Input.GetKeyDown (KeyCode.R)) {
 			delay = 0;
 		}
@@ -68,10 +74,5 @@ public class PlayerController : MonoBehaviour {
 		transform.position = pos;
 	}
 
-
-		//void OnTriggerEnter2D(Collider2D otherGameObject) {
-		//if (otherGameObject.tag == "EnemyMissile" ) {
-		//	Destroy (gameObject);
-		//}
-	//}
+	
 }

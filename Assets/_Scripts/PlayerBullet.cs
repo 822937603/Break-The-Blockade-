@@ -1,22 +1,25 @@
-﻿using UnityEngine;
+﻿/// Jonathan Lee
+/// File: PlayerBullet.cs
+/// Last Updated: October 5th, 2015
+/// Controls the Player Missile and some scoring
+
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
 public class PlayerBullet : MonoBehaviour {
 
+	// PUBLIC INSTANCE VARIABLES
 	float speed;
 
 	public Text scoreLabel;
 	public int  scoreValue;
 
-	//private AudioSource[] _audioSources;
-	//private AudioSource _missileExplodeAudioSource, _itemCollectAudioSource;
+
 	// Use this for initialization
 	void Start () {
 		speed = 8f;
-		//this._audioSources = this.GetComponents<AudioSource> ();
-		//this._missileExplodeAudioSource = this._audioSources [1];
-		//this._itemCollectAudioSource = this._audioSources [2];
+
 	}
 	
 	// Update is called once per frame
@@ -42,6 +45,8 @@ public class PlayerBullet : MonoBehaviour {
 
 
 	}
+
+	//Collision Code for hits Destroy and score calculates
 	void OnTriggerEnter2D(Collider2D otherGameObject) {
 		if (otherGameObject.tag == "EnemyMissile") {
 			//this._missileExplodeAudioSource.Play();
@@ -55,8 +60,9 @@ public class PlayerBullet : MonoBehaviour {
 		}
 	}
 
+	//Sets the score
 		private void _SetScore() {
 		this.scoreLabel.text = "Score: " + -(this.scoreValue);
-		//this._islandAudioSource.Play (); // play yay sound
-	}	//this.scoreValue += 100; // add 100 points
+
+	}	
 }
